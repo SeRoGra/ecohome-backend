@@ -1,0 +1,4 @@
+// domain — sin dependencias externas (solo Java puro + Lombok + Reactor para puertos reactivos)
+dependencies {
+    implementation 'io.projectreactor:reactor-core'
+}

@@ -1,0 +1,22 @@
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    implementation project(':domain')
+    implementation project(':use-cases')
+    implementation project(':infrastructure:driven-adapters:postgres-repository')
+    implementation project(':infrastructure:entry-points:reactive-web')
+
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.postgresql:r2dbc-postgresql'
+    implementation 'io.r2dbc:r2dbc-pool'
+
+    // Para ejecutar el script SQL de inicialización con R2DBC
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    runtimeOnly 'org.postgresql:postgresql'
+}
+
+bootJar {
+    archiveFileName = 'ecohome-backend.jar'
+}

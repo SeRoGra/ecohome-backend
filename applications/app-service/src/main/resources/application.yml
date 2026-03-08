@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ecohome-backend
+
+  r2dbc:
+    url: r2dbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:ecohome}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASS:postgres}
+    pool:
+      initial-size: 5
+      max-size: 20
+      max-idle-time: 30m
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:db/init.sql
+
+jwt:
+  secret: ${JWT_SECRET:ecohome-super-secret-key-256bits-minimum-length-required}
+  expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+
+logging:
+  level:
+    com.ecohome: DEBUG
+    org.springframework.r2dbc: INFO
+    io.r2dbc.postgresql: WARN
