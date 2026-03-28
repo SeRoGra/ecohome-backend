@@ -1,3 +1,8 @@
+# ⚠️ Deprecated
+
+Este repositorio ya no se mantiene.  
+Por favor usar: https://github.com/SeRoGra/ecohome-store
+
 # 🌿 EcoHome Store — Backend API
 
 Backend REST para la plataforma e-commerce de EcoHome Store, implementado con **Clean Architecture** siguiendo el estándar del plugin **Scaffold Bancolombia**.
